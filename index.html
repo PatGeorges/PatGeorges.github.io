@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Elysee - Digital Art Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="profile-branding">
+            <img src="profile.jpg" alt="Patrick Elysee Profile Picture" class="profile-img">
+            <h1 class="logo">My Video Studio</h1>
+        </div>
+        <button id="theme-toggle" class="btn-toggle">Toggle Dark Mode</button>
+    </header>
+
+    <main class="main-layout">
+        <!-- Personal Intro Bio Section + Contact Details -->
+        <section class="card bio-card">
+            <h2>Welcome</h2>
+            <p class="bio-text">
+                Welcome to my website. My name is <strong>Patrick Elysee</strong>. I am a <strong>Digital Art Creator</strong>. 
+                In this site you can view my most recent videos. Enjoy!
+            </p>
+
+            <!-- Embedded SVG Icon Contact Subsection -->
+            <div class="contact-subsection">
+                <h3>Contact</h3>
+                <ul class="contact-list">
+                    <li>
+                        <!-- Envelope SVG Icon -->
+                        <svg class="svg-icon icon-email" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <a href="mailto:pgeorges@uottawa.ca">pgeorges@uottawa.ca</a>
+                    </li>
+                    <li>
+                        <!-- LinkedIn SVG Icon -->
+                        <svg class="svg-icon icon-linkedin" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                        <a href="https://linkedin.com/in/patrick-georges-1b8b043" target="_blank">LinkedIn</a>
+                    </li>
+                    <li>
+                        <!-- Instagram SVG Icon -->
+                        <svg class="svg-icon icon-instagram" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m12.4 2.25a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                        </svg>
+                        <a href="https://instagram.com/patrick_elysee_g" target="_blank">Instagram</a>
+                    </li>
+                    <li>
+                        <!-- YouTube SVG Icon -->
+                        <svg class="svg-icon icon-youtube" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.516 0-9.387.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.503 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.387.508 9.387.508s7.517 0 9.387-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        <a href="https://youtube.com/@patrickgeorgespersonal" target="_blank">YouTube</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Video Studio Dashboard Section -->
+        <section class="card video-dashboard">
+            <div class="main-player-pane">
+                <h2 id="active-video-title">Playing: Video Selection 1</h2>
+                <div class="video-container">
+                    <video id="main-player" controls>
+                        <source id="video-source" src="video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-controls">
+                    <button id="play-pause-btn" class="btn-secondary">Play / Pause</button>
+                    <span id="video-status" class="status-badge">Status: Ready</span>
+                </div>
+            </div>
+
+            <!-- 5-Item Grid Playlist Column -->
+            <div class="playlist-pane">
+                <h3>Select a Video</h3>
+                <div class="playlist-grid">
+                    <div class="thumb-card active-thumb" data-src="video1.mp4" data-title="Video Selection 1">
+                        <video src="video1.mp4#t=0.5" muted preload="metadata"></video>
+                        <div class="thumb-title">Video 1</div>
+                    </div>
+                    <div class="thumb-card" data-src="video2.mp4" data-title="Video Selection 2">
+                        <video src="video2.mp4#t=0.5" muted preload="metadata"></video>
+                        <div class="thumb-title">Video 2</div>
+                    </div>
+                    <div class="thumb-card" data-src="video3.mp4" data-title="Video Selection 3">
+                        <video src="video3.mp4#t=0.5" muted preload="metadata"></video>
+                        <div class="thumb-title">Video 3</div>
+                    </div>
+                    <div class="thumb-card" data-src="video4.mp4" data-title="Video Selection 4">
+                        <video src="video4.mp4#t=0.5" muted preload="metadata"></video>
+                        <div class="thumb-title">Video 4</div>
+                    </div>
+                    <div class="thumb-card" data-src="video5.mp4" data-title="Video Selection 5">
+                        <video src="video5.mp4#t=0.5" muted preload="metadata"></video>
+                        <div class="thumb-title">Video 5</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

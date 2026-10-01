@@ -1,0 +1,208 @@
+/* Color Palette Variables */
+:root {
+    --bg-main: #f0f4f8;
+    --bg-card: #ffffff;
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
+    --border-color: #e2e8f0;
+}
+
+.dark-theme {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --border-color: #334155;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Header UI Elements */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+}
+.profile-branding { display: flex; align-items: center; gap: 1rem; }
+.profile-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
+.logo { font-size: 1.25rem; margin: 0; }
+
+/* Grid Framing Dashboard Layout */
+.main-layout {
+    max-width: 1000px; /* Restricts maximum expansion width */
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* --- CLAMP LARGE VIDEOS --- */
+.video-container {
+    width: 100%;
+    max-width: 650px; /* Strictly enforces max size limits */
+    margin: 1rem auto 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+video { 
+    width: 100%; 
+    max-height: 380px; /* Keeps file height safe from filling up monitors */
+    display: block; 
+    object-fit: contain; 
+}
+
+.video-controls { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 650px;
+    margin: 1rem auto 0; 
+}
+
+/* --- 5-ITEM PLAYLIST BAR ARRANGEMENT --- */
+.playlist-pane {
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+.playlist-pane h3 { margin-top: 0; margin-bottom: 1rem; }
+
+/* Forces playlist blocks into 5 cleanly spaced column boxes */
+.playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Guarantees exactly 5 column grid divisions */
+    gap: 12px;
+}
+
+/* Individual Grid Thumb Cards */
+.thumb-card {
+    background-color: var(--bg-main);
+    border: 2px solid transparent;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.thumb-card video {
+    width: 100%;
+    height: 75px;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.thumb-title {
+    padding: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.thumb-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--text-secondary);
+}
+
+.thumb-card.active-thumb {
+    border-color: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+}
+
+/* Form Styling Row Panels */
+.input-wrapper { display: flex; gap: 0.5rem; margin: 1rem 0; }
+input { flex: 1; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--bg-main); color: var(--text-primary); }
+button { padding: 0.75rem 1.25rem; border-radius: 6px; border: none; font-weight: 600; cursor: pointer; }
+.btn-toggle { background-color: var(--border-color); color: var(--text-primary); }
+.btn-primary { background-color: var(--accent); color: white; }
+.btn-secondary { background-color: var(--border-color); color: var(--text-primary); }
+.status-badge { display: inline-block; padding: 0.25rem 0.5rem; background-color: var(--border-color); border-radius: 4px; font-size: 0.85rem; }
+.output-message { font-weight: 600; min-height: 1.5rem; }
+
+/* Contact Section Clean Alignment Rules */
+.contact-subsection {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed var(--border-color);
+    text-align: left;
+}
+
+.contact-subsection h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+    text-align: left;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    text-align: left;
+}
+
+/* SVG Vector Image Custom Frame Constraints */
+.svg-icon {
+    width: 20px;       /* Forces strict uniform small layout dimensions */
+    height: 20px;
+    display: inline-block;
+    flex-shrink: 0;    /* Prevents the shape from warping or shrinking on mobile windows */
+    transition: transform 0.2s ease;
+}
+
+/* Authentic Brand Color Palettes */
+.icon-email { color: var(--accent); }
+.icon-linkedin { color: #0077b5; }
+.icon-instagram { color: #e1306c; }
+.icon-youtube { color: #ff0000; } /* Distinct YouTube Brand Red */
+
+.contact-list li:hover .svg-icon {
+    transform: scale(1.15); /* Adds a smooth click zoom response effect */
+}
+
+.contact-list a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+
+.contact-list a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
